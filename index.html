@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Flexbox Example</title>
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<head>
+	<style>
+	
+	.fixed-ratio-resize { /* basic responsive img */
+		max-width: 100%;
+		height: auto;
+		width: auto\9; /* IE8 */
+	}
+	
+	#media_query_container{
+		overflow: auto;
+		display: table-row;
+	}
+	.media_queries_divs{
+		display: table-cell;
+		float: left;
+		width: 250px;
+		min-height: 150px;
+	    margin: 22px
+	}
+	@media only screen and (max-width: 900px) {
+		 .media_queries_divs{
+				width: 300px;
+			}
+	}
+	.main_content{
+		margin: 30px;
+	}
+	.flex_images{
+		height: 150px;
+		width: 150px;
+		margin: 20px;
+	}
+	.w3-teal, .w3-hover-teal:hover {
+		background-color: #333 !important;
+	}
+	.flex-container {
+		display: flex;
+		flex-wrap: wrap;
+		background-color: DodgerBlue;
+	}
+
+	.flex-container > div {
+		background-color: #f1f1f1;
+		width: 100px;
+		margin: 10px;
+		text-align: center;
+		line-height: 75px;
+		font-size: 30px;
+	}
+	
+
+	ul {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		overflow: hidden;
+		background-color: #333;
+	}
+
+	li {
+		float: left;
+	}
+
+	li a {
+		display: block;
+		color: white;
+		text-align: center;
+		padding: 14px 16px;
+		text-decoration: none;
+	}
+
+	li a:hover {
+		background-color: #111;
+	}
+	
+ /*	Side Nav */
+body {font-family: "Lato", sans-serif;}
+
+.sidebar {
+	height: 100%;
+	width: 160px;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	background-color: #111;
+	overflow-x: hidden;
+	padding-top: 16px;
+}
+
+.sidebar a {
+	padding: 6px 8px 6px 16px;
+	text-decoration: none;
+	font-size: 20px;
+	color: #818181;
+	display: block;
+}
+
+.sidebar a:hover {
+	color: #f1f1f1;
+}
+
+.main {
+	margin-left: 160px; /* Same as the width of the sidenav */
+	padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+	.sidebar {padding-top: 15px;}
+	.sidebar a {font-size: 18px;}
+}
+	</style>
+	</head>
+	<body>
+	<header>
+	<ul>
+		<li><a class="active" href="#home">Home</a></li>
+		<li><a href="#about">How to Juice</a></li>
+		<li><a href="#about">Health Benefits</a></li>
+		<li><a href="https://google.com/news">Links</a></li>
+		<li><a href="#more_text">More Information</a></li>
+		<!-- 	Sidenav  -->
+			<div class="w3-sidebar w3-bar-block w3-card w3-animate-right" style="display:none;right:0;" id="rightMenu">
+				<button onclick="closeRightMenu()" class="w3-bar-item w3-button w3-large">Close &times;</button>
+				<a href="#media_query_container" class="w3-bar-item w3-button">Pictures</a>
+				<a href="#media_query_container" class="w3-bar-item w3-button">Body</a>
+				<a href="#media_query_container" class="w3-bar-item w3-button">Image</a>
+				<a href="#media_query_container" class="w3-bar-item w3-button">Footer</a>
+			</div>
+
+			<div class="w3-teal">
+				<button class="w3-button w3-teal w3-xlarge w3-right" onclick="openRightMenu()">&#9776;</button>
+			</div>
+	</ul>	
+	</header>
+	<div class="main_content">
+		<h1>Organic Cold Pressed Juicing</h1>
+			<p>--------</p>
+			<div class="flex-container">
+				<img src="images/img_1.jpg" alt="description" class="flex_images">
+				<img src="images/img_2.jpg" alt="description" class="flex_images">
+				<div>3</div>  
+				<div>4</div>
+				<div>5</div>
+				<div>6</div>  
+				<div>7</div>
+				<div>8</div>
+				<div>9</div>  
+				<div>10</div>
+				<div>11</div>
+				<div>12</div>  
+			</div>
+			<p>Try resizing the browser window.</p>
+			<div id="media_query_container">
+				<div class="media_queries_divs">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas enim lacus, sollicitudin at porttitor rhoncus, tincidunt eu purus. Maecenas consequat pellentesque ligula non pharetra. Quisque et porttitor justo, sit amet rutrum massa. Donec vitae tortor ac diam facilisis faucibus. Aenean vulputate purus sed gravida porta. Vestibulum at neque urna. Sed felis turpis, porttitor tempor convallis ut, elementum non augue. Duis velit dolor, condimentum non facilisis et, bibendum vitae tortor. Proin iaculis est nec maximus pellentesque. Etiam dictum, tortor vitae interdum porta, nulla velit ultrices nulla, a sollicitudin eros mauris ut orci.</div>
+				<div class="media_queries_divs">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas enim lacus, sollicitudin at porttitor rhoncus, tincidunt eu purus. Maecenas consequat pellentesque ligula non pharetra. Quisque et porttitor justo, sit amet rutrum massa. Donec vitae tortor ac diam facilisis faucibus. Aenean vulputate purus sed gravida porta. Vestibulum at neque urna. Sed felis turpis, porttitor tempor convallis ut, elementum non augue. Duis velit dolor, condimentum non facilisis et, bibendum vitae tortor. Proin iaculis est nec maximus pellentesque. Etiam dictum, tortor vitae interdum porta, nulla velit ultrices nulla, a sollicitudin eros mauris ut orci.
+				Vestibulum at neque urna. Sed felis turpis, porttitor tempor convallis ut, elementum non augue. Duis velit dolor, condimentum non facilisis et, bibendum vitae tortor. Proin iaculis est nec maximus pellentesque. Etiam dictum, tortor vitae interdum porta, nulla velit ultrices nulla, a sollicitudin eros mauris ut orci.</div>
+				<div class="media_queries_divs">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas enim lacus, sollicitudin at porttitor rhoncus, tincidunt eu purus. Maecenas consequat pellentesque ligula non pharetra. Quisque et porttitor justo, sit amet rutrum massa. Donec vitae tortor ac diam facilisis faucibus. Aenean vulputate purus sed gravida porta. Vestibulum at neque urna. Sed felis turpis, porttitor tempor convallis ut, elementum non augue. Duis velit dolor, condimentum non facilisis et, bibendum vitae tortor. Proin iaculis est nec maximus pellentesque. Etiam dictum, tortor vitae interdum porta, nulla velit ultrices nulla, a sollicitudin eros mauris ut orci.</div>
+				<div class="media_queries_divs">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas enim lacus, sollicitudin at porttitor rhoncus, tincidunt eu purus. Maecenas consequat pellentesque ligula non pharetra. Quisque et porttitor justo, sit amet rutrum massa. Donec vitae tortor ac diam facilisis faucibus. Aenean vulputate purus sed gravida porta. Vestibulum at neque urna. Sed felis turpis, porttitor tempor convallis ut, elementum non augue. Duis velit dolor, condimentum non facilisis et, bibendum vitae tortor. Proin iaculis est nec maximus pellentesque. Etiam dictum, tortor vitae interdum porta, nulla velit ultrices nulla, a sollicitudin eros mauris ut orci.</div>
+				<div class="media_queries_divs">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas enim lacus, sollicitudin at porttitor rhoncus, tincidunt eu purus. </div>
+				<div class="media_queries_divs">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas enim lacus, sollicitudin at porttitor rhoncus, tincidunt eu purus. Maecenas consequat pellentesque ligula non pharetra. Quisque et porttitor justo, sit amet rutrum massa. Donec vitae tortor ac diam facilisis faucibus. Aenean vulputate purus sed gravida porta. Vestibulum at neque urna. Sed felis turpis, porttitor tempor convallis ut, elementum non augue. Duis velit dolor, condimentum non facilisis et, bibendum vitae tortor. Proin iaculis est nec maximus pellentesque. Etiam dictum, tortor vitae interdum porta, nulla velit ultrices nulla, a sollicitudin eros mauris ut orci.</div>
+			</div>
+	</div>
+	
+	<img class="fixed-ratio-resize" src="images/img_large_1.jpg" alt="nature">
+	
+	</body>
+	<footer>
+		Mark Luber
+		<br>
+		<p><i><small><a href="mailto:mluber@mail.dccc.edu">mluber@mail.dccc.edu</a></small></i></p>
+		<script>			
+			var myDate = new Date() 
+			var month = myDate.getMonth() + 1 
+			var day = myDate.getDate() 
+			var year = myDate.getFullYear() 
+			document.write(month + "/" + day + "/" + year)
+			
+			</script>
+			
+		</footer>
+	<script>
+		function openRightMenu() {
+			document.getElementById("rightMenu").style.display = "block";
+		}
+
+		function closeRightMenu() {
+			document.getElementById("rightMenu").style.display = "none";
+		}
+		</script>
+		
+</html>
