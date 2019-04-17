@@ -18,16 +18,16 @@
 	<!--Here is the grid reordering css-->
 	
 	.table_parent{
-		display: table;
+/*		display: table;*/
 	}
 	
 	#media_query_container{
 		overflow: auto;
-		display: table-row;
+		margin-left: 15%;
+/*		display: table-row;*/
 	}
 	.media_queries_divs{
-		display: table-cell;
-		text-align: center;
+/*		display: table-cell;*/	
 		float: left;
 		width: 250px;
 		min-height: 150px;
@@ -35,11 +35,22 @@
 	
 	}
 /*	grid reordering based on screen size*/
-	@media only screen and (max-width: 900px) {
-		 .media_queries_divs{
-				width: 300px;
-			}
+	@media only screen and (min-width: 732px) {
+			#media_query_container{
+					margin-left: 30%;
+				}
 	}
+	@media only screen and (min-width: 1000px) {
+				#media_query_container{
+						margin-left: 10%;
+					}
+		}
+	@media only screen and (min-width: 1200px) {
+			#media_query_container{
+					margin-left: 15%;
+				}
+	}
+	
 	.main_content{
 		margin: 5px;
 		overflow: auto;
