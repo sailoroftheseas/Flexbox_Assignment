@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+		/* Stretching all container's parents to full height */
+
+		html,
+		body {
+			height: 100%;
+			margin: 0;
+			padding: 0;
+		}
+		/* Setting the container to be a table with maximum width and height */
+
+		#container {
+			display: table;
+			height: 100%;
+			width: 100%;
+		}
+		/* All sections (container's children) should be table rows with minimal height */
+
+		.section {
+			display: table-row;
+			height: 1px;
+		}
+		/* The last-but-one section should be stretched to automatic height */
+
+		.section.expand {
+			height: auto;
+		}
+		/*************************
+		 * Full height columns
+		 ************************/
+
+		/* We need one extra container, setting it to full width */
+
+		.columns-container {
+		display: table-cell;
+		height: 100%;
+		width:600px;
+		text-align: center;
+		}
+		/* Creating columns */
+
+		.column {
+			/* The float:left won't work for Chrome for some reason, so inline-block */
+			display: inline-block;
+			/* for this to work, the .column elements should have NO SPACE BETWEEN THEM */
+			vertical-align: top;
+			height: 100%;
+			width: 100px;
+		}
+		/****************************************************************
+		 * Just some coloring so that we're able to see height of columns
+		 ****************************************************************/
+
+		header {
+			background-color: yellow;
+		}
+		#a {
+			background-color: pink;
+		}
+		#b {
+			background-color: lightgreen;
+		}
+		#c {
+			background-color: lightblue;
+		}
+		footer {
+			background-color: purple;
+		}
+		</style>
+	</head>
+	<body>
+		<div id="container">
+			<header class="section">
+				foo
+			</header>
+
+			<div class="section expand">
+				<div class="columns-container">
+					<div class="column" id="a">
+						<p>Contents A</p>
+					</div>
+					<div class="column" id="b">
+						<p>Contents B</p>
+					</div>
+					<div class="column" id="c">
+						<p>Contents C</p>
+					</div>
+				</div>
+			</div>
+
+			<footer class="section">
+				bar
+			</footer>
+		</div>
+	</body>
+</html>

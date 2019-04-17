@@ -6,11 +6,19 @@
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<head>
 	<style>
-	
+	*{
+		border: dotted;
+	}
 	.fixed-ratio-resize { /* basic responsive img */
 		max-width: 100%;
 		height: auto;
 		width: auto\9; /* IE8 */
+	}
+	
+	<!--Here is the grid reordering css-->
+	
+	.table_parent{
+		display: table;
 	}
 	
 	#media_query_container{
@@ -19,43 +27,61 @@
 	}
 	.media_queries_divs{
 		display: table-cell;
+		text-align: center;
 		float: left;
 		width: 250px;
 		min-height: 150px;
-	    margin: 22px
+	    margin: 22px;
+	
 	}
+/*	grid reordering based on screen size*/
 	@media only screen and (max-width: 900px) {
 		 .media_queries_divs{
 				width: 300px;
 			}
 	}
 	.main_content{
-		margin: 30px;
+		margin: 5px;
+		overflow: auto;
 	}
 	.flex_images{
 		height: 150px;
 		width: 150px;
-		margin: 20px;
+		margin: 5px;
 	}
 	.w3-teal, .w3-hover-teal:hover {
+		flex-grow: 1;
 		background-color: #333 !important;
 	}
+/*	here is the flex container that flexes and centers the array of images based on screen size*/
 	.flex-container {
 		display: flex;
 		flex-wrap: wrap;
-		background-color: DodgerBlue;
+		justify-content: center;
+		align-items: center;
 	}
-
+/*	?????*/
 	.flex-container > div {
-		background-color: #f1f1f1;
 		width: 100px;
 		margin: 10px;
 		text-align: center;
 		line-height: 75px;
 		font-size: 30px;
 	}
+/*	this flexes the top navbar based on screen size*/
+	.top_nav_parent{
+/*		overflow: auto;*/
+		display: flex;
+/*		align-items: stretch;*/
+	}	
+	.top_nav{
+/*		float: left;*/
+/*		display: flex;*/
+/*		flex-wrap: wrap;*/
+		justify-content: center;
+		align-items: center;
+	}
 	
-
 	ul {
 		list-style-type: none;
 		margin: 0;
@@ -80,10 +106,11 @@
 		background-color: #111;
 	}
 	
- /*	Side Nav */
+ /*	Side Navbar */
 body {font-family: "Lato", sans-serif;}
 
 .sidebar {
+	float: left;
 	height: 100%;
 	width: 160px;
 	position: fixed;
@@ -93,6 +120,8 @@ body {font-family: "Lato", sans-serif;}
 	background-color: #111;
 	overflow-x: hidden;
 	padding-top: 16px;
+/*	justify-content: flex-start;*/
+/*	align-items: left;*/
 }
 
 .sidebar a {
@@ -116,76 +145,134 @@ body {font-family: "Lato", sans-serif;}
 	.sidebar {padding-top: 15px;}
 	.sidebar a {font-size: 18px;}
 }
+
+.footer_parent{
+	text-align: center;
+}
+.footer_class {
+	display: inline-block;
+}
 	</style>
 	</head>
 	<body>
 	<header>
-	<ul>
-		<li><a class="active" href="#home">Home</a></li>
-		<li><a href="#about">How to Juice</a></li>
-		<li><a href="#about">Health Benefits</a></li>
-		<li><a href="https://google.com/news">Links</a></li>
-		<li><a href="#more_text">More Information</a></li>
-		<!-- 	Sidenav  -->
-			<div class="w3-sidebar w3-bar-block w3-card w3-animate-right" style="display:none;right:0;" id="rightMenu">
-				<button onclick="closeRightMenu()" class="w3-bar-item w3-button w3-large">Close &times;</button>
-				<a href="#media_query_container" class="w3-bar-item w3-button">Pictures</a>
-				<a href="#media_query_container" class="w3-bar-item w3-button">Body</a>
-				<a href="#media_query_container" class="w3-bar-item w3-button">Image</a>
-				<a href="#media_query_container" class="w3-bar-item w3-button">Footer</a>
-			</div>
+		<div class="top_nav_parent">
+			<ul class="top_nav">
+				<li><a class="active" href="#home">Home</a></li>
+				<li><a href="#about">How to Juice</a></li>
+				<li><a href="#about">Health Benefits</a></li>
+				<li><a href="https://google.com/news">Links</a></li>
+				<li><a href="#more_text">More Information</a></li>
+			</ul>
+			<!-- 	Sidenav  -->
+				<div class="w3-sidebar w3-bar-block w3-card w3-animate-right" style="display:none;right:0;" id="rightMenu">
+					<button onclick="closeRightMenu()" class="w3-bar-item w3-button w3-large">Close &times;</button>
+					<a href="#media_query_container" class="w3-bar-item w3-button">Pictures</a>
+					<a href="#media_query_container" class="w3-bar-item w3-button">Body</a>
+					<a href="#media_query_container" class="w3-bar-item w3-button">Image</a>
+					<a href="#media_query_container" class="w3-bar-item w3-button">Footer</a>
+				</div>
 
-			<div class="w3-teal">
-				<button class="w3-button w3-teal w3-xlarge w3-right" onclick="openRightMenu()">&#9776;</button>
-			</div>
-	</ul>	
+				<div class="w3-teal">
+					<button class="w3-button w3-teal w3-xlarge w3-right" onclick="openRightMenu()">&#9776;</button>
+				</div>
+		</div>	
 	</header>
+	
+	
+	<!---
+	<div class="header">
+		<h1>Responsive Image Grid</h1>
+		<p>Resize the browser window to see the responsive effect.</p>
+	</div>
+-->
+	<!-- Photo Grid -->
+	<!---
+	<div class="row"> 
+		<div class="column">
+			<img src="images/img_1.jpg" style="width:100%">
+			<img src="images/img_2.jpg" style="width:100%">
+			<img src="images/img_1.jpg" style="width:100%">
+		</div>
+		
+		<div class="column">
+			<img src="images/img_1.jpg" style="width:100%">
+			<img src="images/img_2.jpg" style="width:100%">
+			<img src="images/img_1.jpg" style="width:100%">
+		</div> 
+		 
+		<div class="column">
+			<img src="images/img_1.jpg" style="width:100%">
+			<img src="images/img_2.jpg" style="width:100%">
+			<img src="images/img_1.jpg" style="width:100%">
+		</div>
+		
+		<div class="column">
+			<img src="images/img_1.jpg" style="width:100%">
+			<img src="images/img_2.jpg" style="width:100%">
+			<img src="images/img_1.jpg" style="width:100%">
+		</div>
+	</div>
+	-->
+	
 	<div class="main_content">
 		<h1>Organic Cold Pressed Juicing</h1>
 			<p>--------</p>
+			<img class="fixed-ratio-resize" src="images/img_large_1.jpg" alt="nature">
+			<h2>--------</h2>
 			<div class="flex-container">
-				<img src="images/img_1.jpg" alt="description" class="flex_images">
-				<img src="images/img_2.jpg" alt="description" class="flex_images">
-				<div>3</div>  
-				<div>4</div>
-				<div>5</div>
-				<div>6</div>  
-				<div>7</div>
-				<div>8</div>
-				<div>9</div>  
-				<div>10</div>
-				<div>11</div>
-				<div>12</div>  
+			
+				<img src="images/IMG_0215.jpeg" alt="description" class="flex_images">
+				<img src="images/IMG_0128.jpeg" alt="description" class="flex_images">  
+				<img src="images/IMG_0038.jpeg" alt="description" class="flex_images">  
+				<img src="images/IMG_0055.jpg" alt="description" class="flex_images">
+				<img src="images/IMG_0070.jpeg" alt="description" class="flex_images">
+				<img src="images/IMG_0094.jpeg" alt="description" class="flex_images"> 
+				<img src="images/IMG_0101.jpeg" alt="description" class="flex_images">
+				<img src="images/IMG_0121.jpeg" alt="description" class="flex_images">
+				<img src="images/IMG_0204.jpeg" alt="description" class="flex_images"> 
+				<img src="images/IMG_0025.jpeg" alt="description" class="flex_images">
+				<img src="images/IMG_0214.jpeg" alt="description" class="flex_images">
+				<img src="images/IMG_0265.jpeg" alt="description" class="flex_images">
+				<img src="images/IMG_0241.jpeg" alt="description" class="flex_images">
+				<img src="images/IMG_0011.jpeg" alt="description" class="flex_images">
+				
 			</div>
 			<p>Try resizing the browser window.</p>
-			<div id="media_query_container">
-				<div class="media_queries_divs">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas enim lacus, sollicitudin at porttitor rhoncus, tincidunt eu purus. Maecenas consequat pellentesque ligula non pharetra. Quisque et porttitor justo, sit amet rutrum massa. Donec vitae tortor ac diam facilisis faucibus. Aenean vulputate purus sed gravida porta. Vestibulum at neque urna. Sed felis turpis, porttitor tempor convallis ut, elementum non augue. Duis velit dolor, condimentum non facilisis et, bibendum vitae tortor. Proin iaculis est nec maximus pellentesque. Etiam dictum, tortor vitae interdum porta, nulla velit ultrices nulla, a sollicitudin eros mauris ut orci.</div>
-				<div class="media_queries_divs">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas enim lacus, sollicitudin at porttitor rhoncus, tincidunt eu purus. Maecenas consequat pellentesque ligula non pharetra. Quisque et porttitor justo, sit amet rutrum massa. Donec vitae tortor ac diam facilisis faucibus. Aenean vulputate purus sed gravida porta. Vestibulum at neque urna. Sed felis turpis, porttitor tempor convallis ut, elementum non augue. Duis velit dolor, condimentum non facilisis et, bibendum vitae tortor. Proin iaculis est nec maximus pellentesque. Etiam dictum, tortor vitae interdum porta, nulla velit ultrices nulla, a sollicitudin eros mauris ut orci.
-				Vestibulum at neque urna. Sed felis turpis, porttitor tempor convallis ut, elementum non augue. Duis velit dolor, condimentum non facilisis et, bibendum vitae tortor. Proin iaculis est nec maximus pellentesque. Etiam dictum, tortor vitae interdum porta, nulla velit ultrices nulla, a sollicitudin eros mauris ut orci.</div>
-				<div class="media_queries_divs">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas enim lacus, sollicitudin at porttitor rhoncus, tincidunt eu purus. Maecenas consequat pellentesque ligula non pharetra. Quisque et porttitor justo, sit amet rutrum massa. Donec vitae tortor ac diam facilisis faucibus. Aenean vulputate purus sed gravida porta. Vestibulum at neque urna. Sed felis turpis, porttitor tempor convallis ut, elementum non augue. Duis velit dolor, condimentum non facilisis et, bibendum vitae tortor. Proin iaculis est nec maximus pellentesque. Etiam dictum, tortor vitae interdum porta, nulla velit ultrices nulla, a sollicitudin eros mauris ut orci.</div>
-				<div class="media_queries_divs">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas enim lacus, sollicitudin at porttitor rhoncus, tincidunt eu purus. Maecenas consequat pellentesque ligula non pharetra. Quisque et porttitor justo, sit amet rutrum massa. Donec vitae tortor ac diam facilisis faucibus. Aenean vulputate purus sed gravida porta. Vestibulum at neque urna. Sed felis turpis, porttitor tempor convallis ut, elementum non augue. Duis velit dolor, condimentum non facilisis et, bibendum vitae tortor. Proin iaculis est nec maximus pellentesque. Etiam dictum, tortor vitae interdum porta, nulla velit ultrices nulla, a sollicitudin eros mauris ut orci.</div>
-				<div class="media_queries_divs">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas enim lacus, sollicitudin at porttitor rhoncus, tincidunt eu purus. </div>
-				<div class="media_queries_divs">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas enim lacus, sollicitudin at porttitor rhoncus, tincidunt eu purus. Maecenas consequat pellentesque ligula non pharetra. Quisque et porttitor justo, sit amet rutrum massa. Donec vitae tortor ac diam facilisis faucibus. Aenean vulputate purus sed gravida porta. Vestibulum at neque urna. Sed felis turpis, porttitor tempor convallis ut, elementum non augue. Duis velit dolor, condimentum non facilisis et, bibendum vitae tortor. Proin iaculis est nec maximus pellentesque. Etiam dictum, tortor vitae interdum porta, nulla velit ultrices nulla, a sollicitudin eros mauris ut orci.</div>
+			
+			<!--Here is the grid reordering-->
+			<div class="table_parent">
+				<div id="media_query_container">
+					<div class="media_queries_divs">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas enim lacus, sollicitudin at porttitor rhoncus, tincidunt eu purus. Maecenas consequat pellentesque ligula non pharetra. Quisque et porttitor justo, sit amet rutrum massa. Donec vitae tortor ac diam facilisis faucibus. Aenean vulputate purus sed gravida porta. Vestibulum at neque urna. Sed felis turpis, porttitor tempor convallis ut, elementum non augue. Duis velit dolor, condimentum non facilisis et, bibendum vitae tortor. Proin iaculis est nec maximus pellentesque. Etiam dictum, tortor vitae interdum porta, nulla velit ultrices nulla, a sollicitudin eros mauris ut orci.</div>
+					<div class="media_queries_divs">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas enim lacus, sollicitudin at porttitor rhoncus, tincidunt eu purus. Maecenas consequat pellentesque ligula non pharetra. Quisque et porttitor justo, sit amet rutrum massa. Donec vitae tortor ac diam facilisis faucibus. Aenean vulputate purus sed gravida porta. Vestibulum at neque urna. Sed felis turpis, porttitor tempor convallis ut, elementum non augue. Duis velit dolor, condimentum non facilisis et, bibendum vitae tortor. Proin iaculis est nec maximus pellentesque. Etiam dictum, tortor vitae interdum porta, nulla velit ultrices nulla, a sollicitudin eros mauris ut orci.
+					Vestibulum at neque urna. Sed felis turpis, porttitor tempor convallis ut, elementum non augue. Duis velit dolor, condimentum non facilisis et, bibendum vitae tortor. Proin iaculis est nec maximus pellentesque. Etiam dictum, tortor vitae interdum porta, nulla velit ultrices nulla, a sollicitudin eros mauris ut orci.</div>
+					<div class="media_queries_divs">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas enim lacus, sollicitudin at porttitor rhoncus, tincidunt eu purus. Maecenas consequat pellentesque ligula non pharetra. Quisque et porttitor justo, sit amet rutrum massa. Donec vitae tortor ac diam facilisis faucibus. Aenean vulputate purus sed gravida porta. Vestibulum at neque urna. Sed felis turpis, porttitor tempor convallis ut, elementum non augue. Duis velit dolor, condimentum non facilisis et, bibendum vitae tortor. Proin iaculis est nec maximus pellentesque. Etiam dictum, tortor vitae interdum porta, nulla velit ultrices nulla, a sollicitudin eros mauris ut orci.</div>
+					<div class="media_queries_divs">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas enim lacus, sollicitudin at porttitor rhoncus, tincidunt eu purus. Maecenas consequat pellentesque ligula non pharetra. Quisque et porttitor justo, sit amet rutrum massa. Donec vitae tortor ac diam facilisis faucibus. Aenean vulputate purus sed gravida porta. Vestibulum at neque urna. Sed felis turpis, porttitor tempor convallis ut, elementum non augue. Duis velit dolor, condimentum non facilisis et, bibendum vitae tortor. Proin iaculis est nec maximus pellentesque. Etiam dictum, tortor vitae interdum porta, nulla velit ultrices nulla, a sollicitudin eros mauris ut orci.</div>
+					<div class="media_queries_divs">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas enim lacus, sollicitudin at porttitor rhoncus, tincidunt eu purus. </div>
+					<div class="media_queries_divs">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas enim lacus, sollicitudin at porttitor rhoncus, tincidunt eu purus. Maecenas consequat pellentesque ligula non pharetra. Quisque et porttitor justo, sit amet rutrum massa. Donec vitae tortor ac diam facilisis faucibus. Aenean vulputate purus sed gravida porta. Vestibulum at neque urna. Sed felis turpis, porttitor tempor convallis ut, elementum non augue. Duis velit dolor, condimentum non facilisis et, bibendum vitae tortor. Proin iaculis est nec maximus pellentesque. Etiam dictum, tortor vitae interdum porta, nulla velit ultrices nulla, a sollicitudin eros mauris ut orci.</div>
+				</div>
 			</div>
+			
 	</div>
 	
-	<img class="fixed-ratio-resize" src="images/img_large_1.jpg" alt="nature">
-	
+
+
+		
 	</body>
-	<footer>
-		Mark Luber
-		<br>
-		<p><i><small><a href="mailto:mluber@mail.dccc.edu">mluber@mail.dccc.edu</a></small></i></p>
-		<script>			
-			var myDate = new Date() 
-			var month = myDate.getMonth() + 1 
-			var day = myDate.getDate() 
-			var year = myDate.getFullYear() 
-			document.write(month + "/" + day + "/" + year)
-			
-			</script>
-			
-		</footer>
+	<div class="footer_parent">
+		<footer class="footer_class">
+			Mark Luber
+			<br>
+			<p><i><small><a href="mailto:mluber@mail.dccc.edu">mluber@mail.dccc.edu</a></small></i></p>
+			<script>			
+				var myDate = new Date() 
+				var month = myDate.getMonth() + 1 
+				var day = myDate.getDate() 
+				var year = myDate.getFullYear() 
+				document.write(month + "/" + day + "/" + year)
+				</script>
+			</footer>
+		</div>	
 	<script>
 		function openRightMenu() {
 			document.getElementById("rightMenu").style.display = "block";
