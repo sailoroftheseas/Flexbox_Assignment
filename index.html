@@ -6,26 +6,31 @@
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<head>
 	<style>
-	*{
-		border: dotted;
-	}
-	.fixed-ratio-resize { /* basic responsive img */
+/*	*{*/
+/*		border: dotted;*/
+/*	}*/
+
+
+/*	resizeable image*/
+	.fixed-ratio-resize { 
 		max-width: 100%;
 		height: auto;
-		width: auto\9; /* IE8 */
+		width: auto\9; 
 	}
 	
 	<!--Here is the grid reordering css-->
 	
-	.table_parent{
+/*	.table_parent{*/
 /*		display: table;*/
-	}
+/*	}*/
 	
+/*	grid reordering css*/
 	#media_query_container{
 		overflow: auto;
 		margin-left: 15%;
 /*		display: table-row;*/
 	}
+/*	grid reodering div styling*/
 	.media_queries_divs{
 /*		display: table-cell;*/	
 		float: left;
@@ -50,16 +55,18 @@
 					margin-left: 15%;
 				}
 	}
-	
+/*	puts a margin around the main content, contains all elements within*/
 	.main_content{
-		margin: 5px;
+		margin: 4px;
 		overflow: auto;
 	}
+/*	adds marigins and styling for flex images*/
 	.flex_images{
 		height: 150px;
 		width: 150px;
 		margin: 5px;
 	}
+/*	styles the sidenav for flex */
 	.w3-teal, .w3-hover-teal:hover {
 		flex-grow: 1;
 		background-color: #333 !important;
@@ -71,20 +78,21 @@
 		justify-content: center;
 		align-items: center;
 	}
-/*	?????*/
-	.flex-container > div {
-		width: 100px;
-		margin: 10px;
-		text-align: center;
-		line-height: 75px;
-		font-size: 30px;
-	}
+/*	styles each*/
+/*	.flex-container > div {*/
+/*		width: 100px;*/
+/*		margin: 10px;*/
+/*		text-align: center;*/
+/*		line-height: 75px;*/
+/*		font-size: 30px;*/
+/*	}*/
 /*	this flexes the top navbar based on screen size*/
 	.top_nav_parent{
 /*		overflow: auto;*/
 		display: flex;
 /*		align-items: stretch;*/
 	}	
+/*	centers navbar items*/
 	.top_nav{
 /*		float: left;*/
 /*		display: flex;*/
@@ -92,7 +100,7 @@
 		justify-content: center;
 		align-items: center;
 	}
-	
+/* styling for the top nav bar*/
 	ul {
 		list-style-type: none;
 		margin: 0;
@@ -104,7 +112,7 @@
 	li {
 		float: left;
 	}
-
+/* styling for top nav bar buttons*/
 	li a {
 		display: block;
 		color: white;
@@ -112,51 +120,52 @@
 		padding: 14px 16px;
 		text-decoration: none;
 	}
-
+/*	styling for buttons to slightly change color when the user hovers over the buttons*/
 	li a:hover {
 		background-color: #111;
 	}
 	
  /*	Side Navbar */
 body {font-family: "Lato", sans-serif;}
+/**/
+/*.sidebar {*/
+/*	float: left;*/
+/*	height: 100%;*/
+/*	width: 160px;*/
+/*	position: fixed;*/
+/*	z-index: 1;*/
+/*	top: 0;*/
+/*	left: 0;*/
+/*	background-color: #111;*/
+/*	overflow-x: hidden;*/
+/*	padding-top: 16px;*/
+/*/*	justify-content: flex-start;*/*/
+/*/*	align-items: left;*/*/
+/*}*/
+/**/
+/*.sidebar a {*/
+/*	padding: 6px 8px 6px 16px;*/
+/*	text-decoration: none;*/
+/*	font-size: 20px;*/
+/*	color: #818181;*/
+/*	display: block;*/
+/*}*/
+/**/
+/*.sidebar a:hover {*/
+/*	color: #f1f1f1;*/
+/*}*/
 
-.sidebar {
-	float: left;
-	height: 100%;
-	width: 160px;
-	position: fixed;
-	z-index: 1;
-	top: 0;
-	left: 0;
-	background-color: #111;
-	overflow-x: hidden;
-	padding-top: 16px;
-/*	justify-content: flex-start;*/
-/*	align-items: left;*/
-}
+/*.main {*/
+/*	margin-left: 160px; /* Same as the width of the sidenav */*/
+/*	padding: 0px 10px;*/
+/*}*/
 
-.sidebar a {
-	padding: 6px 8px 6px 16px;
-	text-decoration: none;
-	font-size: 20px;
-	color: #818181;
-	display: block;
-}
+/*@media screen and (max-height: 450px) {*/
+/*	.sidebar {padding-top: 15px;}*/
+/*	.sidebar a {font-size: 18px;}*/
+/*}*/
 
-.sidebar a:hover {
-	color: #f1f1f1;
-}
-
-.main {
-	margin-left: 160px; /* Same as the width of the sidenav */
-	padding: 0px 10px;
-}
-
-@media screen and (max-height: 450px) {
-	.sidebar {padding-top: 15px;}
-	.sidebar a {font-size: 18px;}
-}
-
+/*styling to center the footer*/
 .footer_parent{
 	text-align: center;
 }
@@ -170,18 +179,19 @@ body {font-family: "Lato", sans-serif;}
 		<div class="top_nav_parent">
 			<ul class="top_nav">
 				<li><a class="active" href="#home">Home</a></li>
-				<li><a href="#about">How to Juice</a></li>
-				<li><a href="#about">Health Benefits</a></li>
-				<li><a href="https://google.com/news">Links</a></li>
-				<li><a href="#more_text">More Information</a></li>
+				<li><a href="#about">Cold pressed juicing</a></li>
+				<li><a href="#about">Info</a></li>
+				<li><a href="https://google.com/news">Contact</a></li>
+				<li><a href="http://organiccoldpressedjuiceinfo.com">More Information</a></li>
 			</ul>
 			<!-- 	Sidenav  -->
 				<div class="w3-sidebar w3-bar-block w3-card w3-animate-right" style="display:none;right:0;" id="rightMenu">
 					<button onclick="closeRightMenu()" class="w3-bar-item w3-button w3-large">Close &times;</button>
-					<a href="#media_query_container" class="w3-bar-item w3-button">Pictures</a>
-					<a href="#media_query_container" class="w3-bar-item w3-button">Body</a>
-					<a href="#media_query_container" class="w3-bar-item w3-button">Image</a>
-					<a href="#media_query_container" class="w3-bar-item w3-button">Footer</a>
+					<a href="#media_query_container" class="w3-bar-item w3-button">Home</a>
+					<a href="#media_query_container" class="w3-bar-item w3-button">Cold pressed Juicing</a>
+					<a href="#media_query_container" class="w3-bar-item w3-button">Images</a>
+					<a href="#media_query_container" class="w3-bar-item w3-button">Info</a>
+					<a href="#footer_parent" class="w3-bar-item w3-button">Contact me</a>
 				</div>
 
 				<div class="w3-teal">
@@ -229,11 +239,11 @@ body {font-family: "Lato", sans-serif;}
 	<div class="main_content">
 		<h1>Organic Cold Pressed Juicing</h1>
 			<p>--------</p>
-			<img class="fixed-ratio-resize" src="images/img_large_1.jpg" alt="nature">
+			<img class="fixed-ratio-resize" src="images/fruitveg.jpg" alt="nature">
 			<h2>--------</h2>
 			<div class="flex-container">
 			
-				<img src="images/IMG_0215.jpeg" alt="description" class="flex_images">
+				<a href="#media_query_container"><img src="images/IMG_0215.jpeg" alt="description" class="flex_images"></a>
 				<img src="images/IMG_0128.jpeg" alt="description" class="flex_images">  
 				<img src="images/IMG_0038.jpeg" alt="description" class="flex_images">  
 				<img src="images/IMG_0055.jpg" alt="description" class="flex_images">
@@ -249,7 +259,7 @@ body {font-family: "Lato", sans-serif;}
 				<img src="images/IMG_0011.jpeg" alt="description" class="flex_images">
 				
 			</div>
-			<p>Try resizing the browser window.</p>
+			<h2>Info</h2>
 			
 			<!--Here is the grid reordering-->
 			<div class="table_parent">
